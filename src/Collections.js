@@ -7,6 +7,7 @@ const collections = [
     linkedInUrl: 'https://www.linkedin.com/in/jinho6225/',
     gitHubUrl: 'https://github.com/jinho6225',
     portfolioUrl: 'https://jinho6225.com/',
+    title: 'Full Stack Web Developer',
   },
 ];
 
