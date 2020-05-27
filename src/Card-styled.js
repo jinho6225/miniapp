@@ -8,10 +8,15 @@ export const CardWrapper = styled.div`
   min-height: 450px;
   font-family: Quicksand, arial, sans-serif;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px rgba(0, 0, 0, 0.08);
-  border-radius: 5px;
+  -ms-transition: 0.4s ease-in-out;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  border-radius: 16px;
 
   &:hover {
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
+    -ms-transform: translate(0, -3px); /* IE 9 */
+    -webkit-transform: translate(0, -3px); /* Chrome, Safari, Opera */
     transform: translate(0, -3px);
   }
 `;
@@ -42,12 +47,6 @@ export const CardTitle = styled.h1`
   color: #502880;
   border-radius: 35px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
-  transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
-
-  &:hover {
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
-    transform: translate(0, -3px);
-  }
 `;
 
 export const CardBody = styled.div`
