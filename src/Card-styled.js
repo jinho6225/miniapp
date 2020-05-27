@@ -28,7 +28,7 @@ export const CardName = styled.h1`
   border-radius: 35px;
 
   ${CardWrapper}:hover & {
-    color: green;
+    color: #78a636;
     text-decoration: underline;
   }
 `;
@@ -83,7 +83,7 @@ export const CardImg = styled.img`
   ${CardWrapper}:hover & {
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
     transform: translate(0, -5px);
-    border: 8px solid green;
+    border: 5px solid #78a636;
   }
 `;
 
