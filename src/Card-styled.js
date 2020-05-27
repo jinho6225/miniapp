@@ -9,6 +9,11 @@ export const CardWrapper = styled.div`
   font-family: Quicksand, arial, sans-serif;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px rgba(0, 0, 0, 0.08);
   border-radius: 5px;
+
+  &:hover {
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
+    transform: translate(0, -3px);
+  }
 `;
 
 export const CardName = styled.h1`
@@ -21,6 +26,11 @@ export const CardName = styled.h1`
   font-weight: 600;
   color: #664292;
   border-radius: 35px;
+
+  ${CardWrapper}:hover & {
+    color: #78a636;
+    text-decoration: underline;
+  }
 `;
 
 export const CardTitle = styled.h1`
@@ -67,12 +77,13 @@ export const CardFieldset = styled.fieldset`
 export const CardImg = styled.img`
   width: 100%;
   font-family: inherit;
+  border: 1px solid gray;
   border-radius: 50%;
-  border-bottom: 1px solid #ddd;
 
-  &:hover {
-    border: 2px solid green;
+  ${CardWrapper}:hover & {
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
+    transform: translate(0, -5px);
+    border: 5px solid #78a636;
   }
 `;
 
