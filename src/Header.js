@@ -1,18 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaHandsHelping } from 'react-icons/fa';
+import Nav from './Nav';
 
 const HeaderWrapper = styled.div`
-  display: flex;
-  justify-content: center;
   background-color: #9077b3;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 `;
 const HeaderName = styled.h1`
-  margin: 2% 0;
+  width: 50%;
+  padding: 0 3%;
   font-size: 2rem;
   font-weight: bold;
-  text-align: center;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   font-family: sans-serif;
   color: #ffe7a2;
@@ -25,6 +28,7 @@ const Header = () => {
         Job Helper
         <FaHandsHelping />
       </HeaderName>
+      <Nav />
     </HeaderWrapper>
   );
 };
