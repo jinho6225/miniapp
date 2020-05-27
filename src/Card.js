@@ -14,21 +14,19 @@ import {
 } from './Card-styled';
 
 const Card = (props) => {
+  const { card } = props;
   return (
     <CardWrapper>
       <CardBody>
         <CardFieldset>
-          <CardImg
-            alt="profilePic"
-            src={props.collections[0].profile_picture}
-          />
+          <CardImg alt="profilePic" src={card.profile_picture} />
         </CardFieldset>
         <CardFieldset>
-          <CardName>{props.collections[0].name}</CardName>
+          <CardName>{card.name}</CardName>
           <CardOptions>
             <CardOptionsItem>
               <CardLink
-                href={props.collections[0].gitHubUrl}
+                href={card.gitHubUrl}
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -39,7 +37,7 @@ const Card = (props) => {
             </CardOptionsItem>
             <CardOptionsItem>
               <CardLink
-                href={props.collections[0].linkedInUrl}
+                href={card.linkedInUrl}
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -50,7 +48,7 @@ const Card = (props) => {
             </CardOptionsItem>
             <CardOptionsItem>
               <CardLink
-                href={props.collections[0].portfolioUrl}
+                href={card.portfolioUrl}
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -60,7 +58,7 @@ const Card = (props) => {
               </CardLink>
             </CardOptionsItem>
           </CardOptions>
-          <CardTitle>{props.collections[0].title}</CardTitle>
+          <CardTitle>{card.title}</CardTitle>
         </CardFieldset>
       </CardBody>
     </CardWrapper>

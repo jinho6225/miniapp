@@ -11,9 +11,9 @@ const CardBoard = styled.div`
 const Board = () => {
   return (
     <CardBoard>
-      <Card collections={collections} />
-      <Card collections={collections} />
-      <Card collections={collections} />
+      {collections.map((card) => (
+        <Card card={card} key={card.id} />
+      ))}
     </CardBoard>
   );
 };
