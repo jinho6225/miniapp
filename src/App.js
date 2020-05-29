@@ -2,12 +2,27 @@ import React from 'react';
 import Header from './Header';
 import Board from './Board';
 import Footer from './Footer';
+import { Route, Switch } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
 
 function App() {
   return (
     <>
       <Header />
-      <Board />
+
+      <Switch>
+        <Route exact path="/">
+          <Board />
+        </Route>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+      </Switch>
+
       <Footer />
     </>
   );

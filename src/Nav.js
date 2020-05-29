@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const NavBox = styled.ul`
   width: 50%;
@@ -12,12 +13,37 @@ const NavBox = styled.ul`
   color: #ffe7a2;
 `;
 
+const StyledLink = styled(Link)`
+  color: #ffe7a2;
+  display: block;
+  margin: 0.5em 0;
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+
+  &:hover {
+    text-decoration: underline;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
+    transform: translate(0, -3px);
+  }
+`;
+
 function Nav() {
   return (
-    <NavBox>
-      <li>a</li>
-      <li>b</li>
-    </NavBox>
+    <>
+      <NavBox>
+        <li>
+          <StyledLink to="/">App</StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/home">Home</StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/about">About</StyledLink>
+        </li>
+      </NavBox>
+    </>
   );
 }
 
