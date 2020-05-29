@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaHandsHelping } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import Nav from './Nav';
 
 const HeaderWrapper = styled.div`
@@ -21,11 +22,27 @@ const HeaderName = styled.h1`
   color: #ffe7a2;
 `;
 
+const StyledLink = styled(Link)`
+  color: #ffe7a2;
+  display: block;
+  margin: 0.5em 0;
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+
+  &:hover {
+    text-decoration: underline;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
+    transform: translate(0, -3px);
+  }
+`;
+
 const Header = () => {
   return (
     <HeaderWrapper>
       <HeaderName>
-        Job Helper
+        <StyledLink to="/"> Job Helper</StyledLink>
         <FaHandsHelping />
       </HeaderName>
       <Nav />
