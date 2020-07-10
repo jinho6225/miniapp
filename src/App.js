@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from './Header';
 import Board from './Board';
-import Footer from './Footer';
 import { Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
@@ -22,8 +21,6 @@ function App() {
           <About />
         </Route>
       </Switch>
-
-      <Footer />
     </>
   );
 }
