@@ -15,7 +15,7 @@ const App = (props) => {
                 <div className="card">
                   <img src={img} className="card-img-top" alt="..." />
                   <div className="card-body">
-                    <h5 className="card-title">{title}</h5>
+                    <h5 className="card-title">{title} <a href={github} target="_blank" className="github"><i class="fab fa-github-square fa-lg"></i></a></h5>
                     <p className="card-text">{description}</p>
                   </div>
                 </div>

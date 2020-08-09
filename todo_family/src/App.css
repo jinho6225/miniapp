@@ -23,6 +23,15 @@
 .container {
   margin-top: calc(var(--padding)*5);
 }
+
+.github {
+  color: inherit; 
+  transition: all 1s
+}
+.github :hover{
+  transform: scale(1.1);
+}
+
 .header {
   text-align: center;
   padding: var(--padding);
