@@ -24,11 +24,12 @@
   margin-top: calc(var(--padding)*5);
 }
 
-.github {
+.icon {
   color: inherit; 
-  transition: all 1s
+  transition: all 1s;
+  margin: 0 2px;
 }
-.github :hover{
+.icon :hover{
   transform: scale(1.1);
 }
 
@@ -38,8 +39,8 @@
 }
 
 .cardDiv {
-  transition: all 1000ms ease-in-out
-  /* transition: transformn 200ms ease-in-out; */
+  transition: all 1000ms ease-in-out;
+  margin: 2% 0;
 }
 
 .cardDiv:hover{
