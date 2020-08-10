@@ -36,6 +36,17 @@
   text-align: center;
   padding: var(--padding);
 }
+
+.cardDiv {
+  transition: all 1000ms ease-in-out
+  /* transition: transformn 200ms ease-in-out; */
+}
+
+.cardDiv:hover{
+  transform: scale(1.1);
+}
+
+/* 
 .inputBox {
   padding: calc(var(--padding)*2) calc(var(--padding)*3);
   background-color: var(--white-color);
@@ -112,4 +123,4 @@
   .submitBtn {
       font-size: var(--micro-font);
   }
-}
+} */
