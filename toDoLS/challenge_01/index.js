@@ -68,7 +68,7 @@ function paintToDo(currentVal) {
     const rmvBtn = document.createElement("button");
     const checkBtn = document.createElement("button");
     const span = document.createElement("span");
-    const newId = pendingArr.length + 1;
+    const newId = Math.ceil(Math.floor(new Date()) * Math.random())
     rmvBtn.innerText = "❌";
     checkBtn.innerText = "✅"
     rmvBtn.addEventListener("click", deleteTodo);
@@ -86,6 +86,30 @@ function paintToDo(currentVal) {
     pendingArr.push(todoObj);
     saveTodos();
 }
+function paintToDo2(currentVal) {
+    const li = document.createElement("li");
+    const rmvBtn = document.createElement("button");
+    const undoBtn = document.createElement("button");
+    const span = document.createElement("span");
+    rmvBtn.innerText = "❌";
+    undoBtn.innerText = '⬅️'
+    rmvBtn.addEventListener("click", deleteFinishedTodo);
+    undoBtn.addEventListener("click", undoTodo);
+    const id = currentVal.id
+    span.innerText = currentVal.text;
+    li.appendChild(span);
+    li.appendChild(rmvBtn);
+    li.appendChild(undoBtn);
+    li.id = id;
+    todoFinished.appendChild(li);
+    const todoObj = {
+      text: currentVal.text,
+      id: currentVal.id
+    };
+    finishedArr.push(todoObj);
+    saveFinishedTodos();
+}
+
 function handleSubmit(e) {
     e.preventDefault()
     const curVal = input.value;
@@ -98,7 +122,7 @@ function loadFinishedTodos() {
     if (loadFinishedTodos !== null) {
         const todoList = JSON.parse(loadFinishedTodos)
         todoList.forEach((el) => {
-            paintFinishedTodo(el.text)
+            paintToDo2(el)
         })
     }
 }
