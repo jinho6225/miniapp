@@ -33,8 +33,10 @@ function saveTodos() {
 function saveFinishedTodos() {
     localStorage.setItem(FINISHED_LS, JSON.stringify(finishedArr))
 }
-function undoTodo() {
-    console.log('hey yo')
+function undoTodo(e) {
+    deleteFinishedTodo(e)
+    const text = e.target.parentNode.children[0].innerText
+    paintToDo(text)
 }
 function paintFinishedTodo(e) {
     deleteTodo(e)
