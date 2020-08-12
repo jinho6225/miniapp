@@ -22,6 +22,7 @@
 } */
 .container {
   margin-top: calc(var(--padding)*5);
+  background-color: #ede7f6;
 }
 
 .icon {
