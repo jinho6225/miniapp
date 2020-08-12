@@ -47,6 +47,28 @@
   transform: scale(1.1);
 }
 
+.stackList {
+  list-style: none;
+  display: inline-block;
+  border: 1px solid lightgray;
+  border-radius: calc(var(--padding)/2);
+  background-color: #fbe9e7;
+  margin: 0 calc(var(--padding)/4);
+  padding: calc(var(--padding)/4);
+}
+
+.title {
+  text-align: center;
+  position: sticky;
+  top: 1px;
+  z-index: 1;
+  margin-top: 0;
+  margin-bottom: calc(var(--padding)*2);
+  background-color: #fbe9e7;
+  padding: calc(var(--padding)*2);
+  width: 100%;
+}
+
 /* 
 .inputBox {
   padding: calc(var(--padding)*2) calc(var(--padding)*3);
