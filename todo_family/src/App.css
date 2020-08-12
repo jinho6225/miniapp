@@ -16,10 +16,10 @@
   --normal-font: 16px;
   --large-font: 20px
 }
-/* body{
+body{
   background: #e1bee7;
-  background: linear-gradient(90deg, #e1bee7 0%, #fff1ff 50%, #e1bee7 100%);
-} */
+  background: linear-gradient(90deg, #ffffee 0%, #fff1ff 50%, #ffffee 100%);
+}
 .container {
   margin-top: calc(var(--padding)*5);
   background-color: #ede7f6;
