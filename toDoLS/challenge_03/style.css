@@ -44,20 +44,20 @@ body {
 .col {
   text-align: center;
   padding: var(--padding);
-  margin: calc(var(--padding)/2) 0 0 calc(var(--padding)/2);
+  margin: calc(var(--padding)/2) calc(var(--padding)/2);
   cursor: pointer;
 }
 
 .col3 {
-  width: 74%;
+  width: 73%;
 }
 
 .col2 {
-  width: 49%;
+  width: 48%;
 }
 
 .col1 {
-  width: 24%;
+  width: 23%;
 }
 
 .reset {
