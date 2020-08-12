@@ -1,4 +1,74 @@
+  
+:root {
+  /* Color */
+  --white-color: #fff;
+  --black-color: #140a00;
+  --btn-color: #363539;
+  --reset-color: #a7aab0;
+  --operator-color: #fe8e00;
+
+  /* Size */
+  --padding: 12px;
+  --avatar-size: 36px;
+
+  /* Font Size */
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
     font-family: sans-serif;
   }
-  
+
+.calc {
+  background-color: var(--black-color);
+  color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding)
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.col {
+  text-align: center;
+  padding: var(--padding);
+  margin: calc(var(--padding)/2) 0 0 calc(var(--padding)/2);
+  cursor: pointer;
+}
+
+.col3 {
+  width: 74%;
+}
+
+.col2 {
+  width: 49%;
+}
+
+.col1 {
+  width: 24%;
+}
+
+.reset {
+  background-color: var(--reset-color);
+  border-radius: calc(var(--padding)/2);
+}
+.operator {
+  background-color: var(--operator-color);
+  border-radius: calc(var(--padding)/2);
+}
+.btn {
+  background-color: var(--btn-color);
+  border-radius: calc(var(--padding)/2);
+}
