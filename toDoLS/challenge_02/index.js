@@ -40,7 +40,6 @@ function handleSubmit(e) {
     }
 }
 
-
 function init(){
     range.addEventListener('change', handleChange)
     guessBtn.addEventListener('click', handleSubmit)
