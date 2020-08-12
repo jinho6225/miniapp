@@ -3,9 +3,29 @@
   <head>
     <title>toDo challenge</title>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
-
   <body>
-    <script src="./index.js"></script>
+
+    <h1>Random Number Game</h1>
+    <h3>Generate a number between 0 and <span class="targetNum">10</span></h3>
+    <form action="" class="form">
+        <div>
+            <input type="range" name="range" 
+                   min="10" max="150" value="10" step="1" class="range">
+        </div>
+        <div>
+            <label for="">Guess the number: </label>
+            <input type="number" name="guessNum" min="10"> <button class="guessBtn">Play!</button>
+        </div>
+    </form>
+    <div class="progress">
+
+    </div>
+    <div class="result">
+
+    </div>
+
+    <script src="index.js"></script>
   </body>
 </html>
