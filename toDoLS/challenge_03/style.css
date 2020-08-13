@@ -29,46 +29,49 @@ body {
   }
 
 .calc {
-  background-color: var(--black-color);
-  color: var(--white-color);
   display: flex;
   flex-direction: column;
-  padding: var(--padding)
+  background-color: var(--black-color);
+  color: var(--white-color);
+  padding: calc(var(--padding)/2);
 }
 
 .row {
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
 }
 
 .col {
   text-align: center;
-  padding: var(--padding);
-  margin: calc(var(--padding)/2) calc(var(--padding)/2);
-  cursor: pointer;
+  border: 3px solid var(--black-color);
+  border-radius: 10px;
+  padding: calc(var(--padding)/3*2);
 }
 
 .col3 {
-  width: 73%;
+  width: 75%;
 }
 
 .col2 {
-  width: 48%;
+  width: 50%;
 }
 
 .col1 {
-  width: 23%;
+  width: 25%;
 }
 
 .reset {
   background-color: var(--reset-color);
-  border-radius: calc(var(--padding)/2);
 }
 .operator {
   background-color: var(--operator-color);
-  border-radius: calc(var(--padding)/2);
+
 }
 .btn {
   background-color: var(--btn-color);
-  border-radius: calc(var(--padding)/2);
+}
+
+.field {
+  text-align: right;
+
 }
