@@ -30,41 +30,7 @@ function resetHandler() {
     result = null
     operatorArr = []
 }
-
-function operatorHandler(e) {
-    operator = e.target.innerHTML
-    operatorArr.unshift(operator)
-    if (operatorArr.length < 2) {
-        numB = numA
-        numA = null
-        storeNumber = ''
-    } else {
-        const expr = operator;
-        switch (expr) {
-        case '+':
-            result = Number(numB) + Number(numA)
-            break;
-        case '-':
-            result = Number(numB) - Number(numA)
-            break;
-        case '*':
-            result = Number(numB) * Number(numA)
-            break;
-        case '/':
-            result = Number(numB) / Number(numA)
-            break;
-        default:
-            result = 0
-        }
-        numA = result
-        field.innerHTML = numA
-        numB = numA
-        numA = null
-        storeNumber = ''        
-    }
-}
-
-function equalHandler() {
+function switchFn() {
     const expr = operator;
     switch (expr) {
     case '+':
@@ -82,15 +48,31 @@ function equalHandler() {
     default:
         result = 0
     }
+    return result
+}
+function operatorHandler(e) {
+    operator = e.target.innerHTML
+    operatorArr.unshift(operator)
+    if (operatorArr.length < 2) {
+        numB = numA
+        numA = null
+        storeNumber = ''
+    } else {
+        result = switchFn()
+        numA = result
+        field.innerHTML = numA
+        numB = numA
+        numA = null
+        storeNumber = ''        
+    }
+}
+
+function equalHandler() {
+    result = switchFn()
     operatorArr = []
     numA = result
     field.innerHTML = numA
 }
-
-
-
-
-
 
 function eventProvider() {
     for (let i = 0; i < numbers.length; i++) {
