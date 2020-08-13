@@ -75,3 +75,10 @@ body {
   text-align: right;
 
 }
+
+.active {
+  cursor: pointer;
+}
+.active:active {
+  background-color: #545454;
+}
