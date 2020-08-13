@@ -1,25 +1,58 @@
 let numbers = document.querySelectorAll('.num')
 const field = document.querySelector('.field')
+const equal = document.querySelector('.equal')
 let operator = document.querySelectorAll('.operator')
 const reset = document.querySelector('.reset')
+let numA = null
+let numB = null
+let operatorA = null
+let result = null
+
 
 function operatorHandleChange(e) {
     const target = e.target
     const operator = target.innerHTML
-    console.log(operator)
-    //if clicked operator, 
-    //then number on field need to be stored at some place
-    //and need to check which operator
+        if (numB && numA) {
+            switch (operator) {
+                case '+':
+                    result = Number(numB) + Number(numA);
+                    break;
+                case '-':
+                    result = Number(numB) - Number(numA);
+                    break;
+                case '*':
+                    result = Number(numB) * Number(numA);
+                    break;
+                case '/':
+                    result = Number(numB) / Number(numA);
+                    break;
+                default:
+                    result = 0;
+                }
+                field.innerHTML = result;
+                numB = result
+                numA = null
+                operatorA = operator
+        } else {
+            numB = numA
+            numA = null
+            operatorA = operator
+        }
 }
 
 function numHandleChange(e) {
     const target = e.target
     const number = target.innerHTML
-    if (field.innerHTML == 0) {
-        field.innerHTML = number
+    if (numA === null) {
+        numA = number
     } else {
-        field.innerHTML += number
+        if (numA == 0) {
+            numA = number
+        } else {
+            numA += number
+        }
     }
+    field.innerHTML = numA
 }
 function numberFn() {
     numbers = Array.from(numbers)
@@ -34,12 +67,40 @@ function numberFn() {
 
 function resetHandler() {
     field.innerHTML = 0;
-    //clear storage
+    numA = null
+    numB = null
+    operatorA = null
+    result = null
+}
+
+function equalHandler() {
+    if (result) {
+        console.log('heyhe')
+        numB = result
+    }
+    switch (operatorA) {
+    case '+':
+        result = Number(numB) + Number(numA);
+        break;
+    case '-':
+        result = Number(numB) - Number(numA);
+        break;
+    case '*':
+        result = Number(numB) * Number(numA);
+        break;
+    case '/':
+        result = Number(numB) / Number(numA);
+        break;
+    default:
+        result = 0;
+    }
+    field.innerHTML = result;
 }
 
 function init() {
     numberFn()
     reset.addEventListener('click', resetHandler)
+    equal.addEventListener('click', equalHandler)
 }
 
 init()
