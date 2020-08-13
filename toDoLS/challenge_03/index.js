@@ -8,6 +8,7 @@ let numA = null
 let numB = null
 let storeNumber = ''
 let result = null
+let operatorArr = []
 
 function numberHandler(e) {
     const num = e.target.innerHTML
@@ -27,13 +28,40 @@ function resetHandler() {
     storeNumber = ''
     operator = null
     result = null
+    operatorArr = []
 }
 
 function operatorHandler(e) {
-    operator = e.target.innerHTML    
-    numB = numA
-    numA = null
-    storeNumber = ''
+    operator = e.target.innerHTML
+    operatorArr.unshift(operator)
+    if (operatorArr.length < 2) {
+        numB = numA
+        numA = null
+        storeNumber = ''
+    } else {
+        const expr = operator;
+        switch (expr) {
+        case '+':
+            result = Number(numB) + Number(numA)
+            break;
+        case '-':
+            result = Number(numB) - Number(numA)
+            break;
+        case '*':
+            result = Number(numB) * Number(numA)
+            break;
+        case '/':
+            result = Number(numB) / Number(numA)
+            break;
+        default:
+            result = 0
+        }
+        numA = result
+        field.innerHTML = numA
+        numB = numA
+        numA = null
+        storeNumber = ''        
+    }
 }
 
 function equalHandler() {
@@ -54,7 +82,9 @@ function equalHandler() {
     default:
         result = 0
     }
-    field.innerHTML = result
+    operatorArr = []
+    numA = result
+    field.innerHTML = numA
 }
 
 
