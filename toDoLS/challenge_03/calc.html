@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                :root {
+        /* Color */
+        --white-color: #fff;
+        --black-color: #140a00;
+        --btn-color: #363539;
+        --reset-color: #a7aab0;
+        --operator-color: #fe8e00;
+
+        /* Size */
+        --padding: 12px;
+        --avatar-size: 36px;
+
+        /* Font Size */
+        --font-large: 18px;
+        --font-medium: 14px;
+        --font-small: 12px;
+        --font-micro: 10px;
+        }
+
+        * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        }
+        .container {
+            max-width: 100%;
+            background-color: var(--black-color);
+            padding: 1%;
+        }
+        .row {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* grid-template-rows: repeat(12, 1fr); */
+            grid-gap: 5px;
+            grid-template-areas: 
+            "input input input c"
+            "s1 s2 s3 sPlu"
+            "s4 s5 s6 sMin"
+            "s7 s8 s9 sMul"
+            "sZ sZ sEqu sDiv";
+        }
+        span {
+            border-radius: 10px;
+            height: 50px;
+            font-size: var(--font-large);
+            color: var(--white-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .span1 {
+            grid-area: input;
+            justify-self: flex-end;
+            margin-right: 10px;
+        }
+        .span2 {
+            grid-area: c;
+            background-color: var(--reset-color);
+        }
+        .span3 {
+            grid-area: s1;
+            background-color: var(--btn-color);
+        }
+        .span4 {
+            grid-area: s2;
+            background-color: var(--btn-color);
+        }
+        .span5 {
+            grid-area: s3;
+            background-color: var(--btn-color);
+        }
+        .span6 {
+            grid-area: sPlu;
+            background-color: var(--operator-color);
+        }
+        .span7 {
+            grid-area: s4;
+            background-color: var(--btn-color);
+        }
+        .span8 {
+            grid-area: s5;
+            background-color: var(--btn-color);
+        }
+        .span9 {
+            grid-area: s6;
+            background-color: var(--btn-color);
+        }
+        .span10 {
+            grid-area: sMin;
+            background-color: var(--operator-color);
+        }
+        .span11 {
+            grid-area: s7;
+            background-color: var(--btn-color);
+        }
+        .span12 {
+            grid-area: s8;
+            background-color: var(--btn-color);
+        }
+        .span13 {
+            grid-area: s9;
+            background-color: var(--btn-color);
+        }
+        .span14 {
+            grid-area: sMul;
+            background-color: var(--operator-color);
+        }
+        .span15 {
+            grid-area: sZ;
+            background-color: var(--btn-color);
+        }
+        .span16 {
+            grid-area: sEqu;
+            background-color: var(--operator-color);
+        }
+        .span17 {
+            grid-area: sDiv;
+            background-color: var(--operator-color);
+        }
+    </style>
+
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <span class="span1">input</span>
+            <span class="span2">C</span>
+            <span class="span3">1</span>
+            <span class="span4">2</span>
+            <span class="span5">3</span>
+            <span class="span6">+</span>
+            <span class="span7">4</span>
+            <span class="span8">5</span>
+            <span class="span9">6</span>
+            <span class="span10">-</span>
+            <span class="span11">7</span>
+            <span class="span12">8</span>
+            <span class="span13">9</span>
+            <span class="span14">*</span>
+            <span class="span15">0</span>
+            <span class="span16">=</span>
+            <span class="span17">/</span>
+        </div>
+    </div>
+</body>
+</html>
