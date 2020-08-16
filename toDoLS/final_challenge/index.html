@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./clock.js" defer></script>
+    <script src="./name.js" defer></script>
+    <script src="./tasks.js" defer></script>
+    <title>ToDo</title>
+</head>
+<body>
+    <h1 class="name"></h1>
+
+    <h1 class="clock">00:00</h1>
+    <h1>what's your name?</h1>
+    <input type="text" class="name" placeholder="what's your name?">
+
+
+    <h1>Tasks</h1>
+    <form class="js-todoForm">
+        <input type="text" placeholder="Add Task" />
+    </form>
+    <label for=""><h3>PENDING</h3></label>
+    <ul class="js-pending"></ul>
+    <label for=""><h3>FINISHED</h3></label>
+    <ul class="js-finished"></ul>      
+</body>
+</html>
