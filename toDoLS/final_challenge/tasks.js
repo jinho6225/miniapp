@@ -1,5 +1,5 @@
 const todoForm = document.querySelector(".js-todoForm");
-const input = document.querySelector("input");
+const input = document.querySelector(".task_input");
 const todoPending = document.querySelector(".js-pending");
 const todoFinished = document.querySelector(".js-finished");
 
