@@ -63,9 +63,8 @@ app.post('/memo', function(req,res,next) {
 	});
 });
 
-app.delete('/remove/:id', function(req, res, next) {
-	const { _id } = req.params;
-	console.log(req.params, 'params')
+app.post('/remove', function(req, res, next) {
+	const { _id } = req.body;
 	memoModel.findOneAndDelete(_id, function(err) {
 		if(err) throw err;
 		res.json({status: "SUCCESS"});
@@ -77,8 +76,6 @@ app.post('/update', function(req, res, next) {
 	const { author, contents } = req.body;
 	const query = { _id };
 
-	console.log(req.params, 'params')
-	console.log(req.body, 'body')
 	memoModel.findOneAndUpdate(query, { author, contents }, function(err) {
 		if(err) throw err;
 		res.json({status: "SUCCESS"});
