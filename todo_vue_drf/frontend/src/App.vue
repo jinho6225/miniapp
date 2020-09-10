@@ -22,7 +22,7 @@
       <div class="list-container">
         <ul class="unorder-list" v-for="(todo) in todoList" :key="todo.id">
           <li class="task-list">
-            <span>{{ todo.title }}// {{todo.id}}</span>
+            <span>{{ todo.title }}</span>
             <span class="icon">
                 <i class="far fa-edit"></i>
                 <i class="far fa-trash-alt" @click="deleteTask(`${todo.id}`)"></i>
@@ -84,6 +84,7 @@ export default {
           })
           .then(res => res.json())
           .then(data => {
+            console.log(data)
             let newTask = {
               id: data.id,
               title: data.title,
@@ -95,6 +96,22 @@ export default {
           .catch((err) => console.log(err))
       }
     },
+    // updateTask(id) {
+    //     setEditing(false)
+    //     const csrftoken = getCookie('csrftoken');
+    //     let URL = `http://127.0.0.1:8000/api/task-update/${id}`
+    //     fetch(URL, {
+    //       method: 'PUT',
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //         'X-CSRFToken': csrftoken
+    //       },
+    //       body: JSON.stringify({ title: todo.title, completed:  }),
+    //     })
+    //     .then(res => {
+    //       todoList()
+    //     })
+    // },
     deleteTask(id) {
         const csrftoken = getCookie('csrftoken');
         let URL = `http://127.0.0.1:8000/api/task-delete/${id}`
